@@ -20,6 +20,14 @@ function handleKeyboardButtonPress(event)
    // Get Expected to press
 
   const playerPressed = event.key;
+
+  // If player pressed Esc then end the game
+
+  if(playerPressed === 'Escape')
+   {
+      gameOver();
+   }
+
   const currentAlphabetElement = document.getElementById('current-alphabet');
   const currentAlphabet = currentAlphabetElement.innerText;
 
@@ -118,7 +126,7 @@ function play()
  //   reset Score and life
   
    setTextElementValueByID('current-score',0);
-   setTextElementValueByID('current-life',5);
+   setTextElementValueByID('current-life',3);
 
 
    gameStart();
@@ -128,4 +136,14 @@ function gameOver()
 {
    hideElementByID('play-ground');
    showElementByID('score-page');
+
+
+   // Final Score updated
+   const finalScore = getTextElementValueByID('current-score');
+   setTextElementValueByID('final-score',finalScore);
+
+   // Clear the last selected Alphabet 
+
+   const currentAlphabet = getElementTextByID('current-alphabet');
+   removeBackgroundColor(currentAlphabet);
 }

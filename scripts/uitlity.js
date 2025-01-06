@@ -34,7 +34,12 @@ function setTextElementValueByID(elementID, value)
 }
 
 
-
+function getElementTextByID(elementID)
+{
+  const element = document.getElementById(elementID);
+  const text = element.innerText;
+  return text;
+}
 
 function removeBackgroundColor(elementID)
 {
