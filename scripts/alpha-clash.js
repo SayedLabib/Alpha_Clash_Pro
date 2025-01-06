@@ -13,6 +13,36 @@
 
 
 
+
+function handleKeyboardButtonPress(event)
+{
+
+   // Get Expected to press
+
+  const playerPressed = event.key;
+  const currentAlphabetElement = document.getElementById('current-alphabet');
+  const currentAlphabet = currentAlphabetElement.innerText;
+
+  const expectedAlphabet = currentAlphabet.toLowerCase();
+  console.log(playerPressed,expectedAlphabet);
+
+   // Check matched the Alphabet or, not
+
+   if(playerPressed === expectedAlphabet)
+      {
+      console.log('you pressed the correct alphabet');
+      
+      }
+      else{
+         console.log('you pressed the wrong alphabet and missed a point');
+      }
+   
+   
+}
+
+
+document.addEventListener('keyup', handleKeyboardButtonPress);
+
 function gameStart()
 {
    //  step-1: generate a random Alphabet
