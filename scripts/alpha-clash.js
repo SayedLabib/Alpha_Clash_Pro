@@ -12,9 +12,24 @@
 // }
 
 
+
+function gameStart()
+{
+   //  step-1: generate a random Alphabet
+
+   const alphabet = getARandomAlphabet();
+   console.log('Your random alphabet is ',alphabet);
+   
+   // step-2: show the random alphabet into the screen 
+
+   const currentAlphabet = document.getElementById('current-alphabet');
+   currentAlphabet.innerText = alphabet;
+   
+}
+
 function play()
 {
    hideElementByID('home-screen');
    showElementByID('play-ground');
-
+   gameStart();
 }
