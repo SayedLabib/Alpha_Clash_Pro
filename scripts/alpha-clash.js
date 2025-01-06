@@ -24,13 +24,17 @@ function handleKeyboardButtonPress(event)
   const currentAlphabet = currentAlphabetElement.innerText;
 
   const expectedAlphabet = currentAlphabet.toLowerCase();
-  console.log(playerPressed,expectedAlphabet);
+
 
    // Check matched the Alphabet or, not
 
    if(playerPressed === expectedAlphabet)
       {
-      console.log('you pressed the correct alphabet');
+      console.log('you got a point !');
+      console.log('You have pressed the correct alphabet', expectedAlphabet);
+      removeBackgroundColor(expectedAlphabet);
+
+      gameStart();
       
       }
       else{
@@ -43,12 +47,13 @@ function handleKeyboardButtonPress(event)
 
 document.addEventListener('keyup', handleKeyboardButtonPress);
 
+
 function gameStart()
 {
    //  step-1: generate a random Alphabet
 
    const alphabet = getARandomAlphabet();
-   console.log('Your random alphabet is ',alphabet);
+   
    
    // step-2: show the random alphabet into the screen 
 

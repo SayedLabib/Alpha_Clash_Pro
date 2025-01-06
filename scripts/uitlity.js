@@ -18,6 +18,12 @@ function setBackgroundColor(elementID)
 
 }
 
+function removeBackgroundColor(elementID)
+{
+  const element = document.getElementById(elementID);
+  elementID = element.classList.remove('bg-orange-400');
+}
+
 function getARandomAlphabet()
 {
 
