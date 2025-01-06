@@ -50,6 +50,15 @@ function handleKeyboardButtonPress(event)
       }
       else{
          console.log('you pressed the wrong alphabet and missed a point');
+
+         // life count
+
+         const currentLifeElement = document.getElementById('current-life');
+         const currentLifeText = currentLifeElement.innerText;
+         const currentLife = parseInt(currentLifeText);
+
+         const newLife = currentLife - 1;
+         currentLifeElement.innerText = newLife;
       }
    
    
