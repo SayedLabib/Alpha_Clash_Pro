@@ -24,6 +24,10 @@ function gameStart()
 
    const currentAlphabet = document.getElementById('current-alphabet');
    currentAlphabet.innerText = alphabet;
+
+   // step-3: set the background Color to the keyboard Alphabet
+
+   setBackgroundColor(alphabet);
    
 }
 
