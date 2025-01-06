@@ -32,8 +32,19 @@ function handleKeyboardButtonPress(event)
       {
       console.log('you got a point !');
       console.log('You have pressed the correct alphabet', expectedAlphabet);
+      
+      //Update Score:
+      const currentScoreElement = document.getElementById('current-score');
+      
+      const currentScoreText = currentScoreElement.innerText;
+      const currentScore = parseInt(currentScoreText);
+      console.log(currentScore);
+      
+      const newScore = currentScore + 1;  
+      currentScoreElement.innerText = newScore ;
+      
+      // Start a new Round
       removeBackgroundColor(expectedAlphabet);
-
       gameStart();
       
       }

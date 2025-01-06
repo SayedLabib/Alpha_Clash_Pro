@@ -1,7 +1,7 @@
 function hideElementByID(elementID)
 {
    const element = document.getElementById(elementID);
-   element.classList.add('hidden');
+   elementID = element.classList.add('hidden');
 }
 
 function showElementByID(elementID)
