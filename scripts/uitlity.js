@@ -18,6 +18,24 @@ function setBackgroundColor(elementID)
 
 }
 
+function getTextElementValueByID(elementID)
+{
+    const element = document.getElementById(elementID);
+    const elementValueText = element.innerText;
+    const elementValue = parseInt(elementValueText);
+
+    return elementValue;
+}
+
+function setTextElementValueByID(elementID, value)
+{
+  const element  = document.getElementById(elementID);
+  element.innerText = value;
+}
+
+
+
+
 function removeBackgroundColor(elementID)
 {
   const element = document.getElementById(elementID);

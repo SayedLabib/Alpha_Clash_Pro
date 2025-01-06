@@ -32,16 +32,23 @@ function handleKeyboardButtonPress(event)
       {
       console.log('you got a point !');
       console.log('You have pressed the correct alphabet', expectedAlphabet);
+
+      const currentScore = getTextElementValueByID('current-score');
       
+      const updatedScore = currentScore + 1;
+
+      setTextElementValueByID('current-score', updatedScore);
+      
+       //-------------------------------------------------
       //Update Score:
-      const currentScoreElement = document.getElementById('current-score');
+      // const currentScoreElement = document.getElementById('current-score');
       
-      const currentScoreText = currentScoreElement.innerText;
-      const currentScore = parseInt(currentScoreText);
-      console.log(currentScore);
+      // const currentScoreText = currentScoreElement.innerText;
+      // const currentScore = parseInt(currentScoreText);
+      // console.log(currentScore);
       
-      const newScore = currentScore + 1;  
-      currentScoreElement.innerText = newScore ;
+      // const newScore = currentScore + 1;  
+      // currentScoreElement.innerText = newScore ;
       
       // Start a new Round
       removeBackgroundColor(expectedAlphabet);
@@ -51,14 +58,30 @@ function handleKeyboardButtonPress(event)
       else{
          console.log('you pressed the wrong alphabet and missed a point');
 
+         const currentLife = getTextElementValueByID('current-life');
+         const updatedLife = currentLife - 1;
+
+         setTextElementValueByID('current-life', updatedLife);
+
+         if(updatedLife === 0)
+            {
+              gameOver();
+            }
+              
+
+         // ----------------------------------------------------------------
          // life count
 
-         const currentLifeElement = document.getElementById('current-life');
-         const currentLifeText = currentLifeElement.innerText;
-         const currentLife = parseInt(currentLifeText);
+         // const currentLifeElement = document.getElementById('current-life');
+         // const currentLifeText = currentLifeElement.innerText;
+         // const currentLife = parseInt(currentLifeText);
 
-         const newLife = currentLife - 1;
-         currentLifeElement.innerText = newLife;
+         // const newLife = currentLife - 1;
+         // currentLifeElement.innerText = newLife;
+
+    
+          
+
       }
    
    
@@ -89,6 +112,20 @@ function gameStart()
 function play()
 {
    hideElementByID('home-screen');
+   hideElementByID('score-page');
    showElementByID('play-ground');
+
+ //   reset Score and life
+  
+   setTextElementValueByID('current-score',0);
+   setTextElementValueByID('current-life',5);
+
+
    gameStart();
+}
+
+function gameOver()
+{
+   hideElementByID('play-ground');
+   showElementByID('score-page');
 }
